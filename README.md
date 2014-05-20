@@ -14,9 +14,9 @@ It is up to you to define positions, property and animations via css. You can cr
 
 ## Usage
 
-In your html file you must include add JQuery and the main cssSlideJS.js file.
+In your html file you must include JQuery and the main cssSlideJS.js file.
 ```html
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/yourpath/cssSlideJS.js"></script>
 ```
 Then add a div with a list of images and initialize cssSlideJS on this div.
@@ -35,8 +35,8 @@ $(function () {
 </script>
 ```
 
-Now you're ready to define how the slideshow should look like via CSS.
-```html
+Now it's up to you to define how the `fade` slideshow should look like via CSS. Here is a sample:
+```css
 #mySlideshow { width: 256px; height: 256px; }
 .fade { position: relative; }
 .fade .slide {
