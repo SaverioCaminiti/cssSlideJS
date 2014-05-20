@@ -16,8 +16,8 @@ It is up to you to define positions, property and animations via css. You can cr
 
 In your html file you must include add JQuery and the main cssSlideJS.js file.
 ```html
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="/yourpath/cssSlideJS.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/yourpath/cssSlideJS.js"></script>
 ```
 Then add a div with a list of images and initialize cssSlideJS on this div.
 ```html
@@ -70,17 +70,15 @@ To prevent this either assing classes to your images tag in the html code, like 
 ```
 or force an first image swap right after the JavaScript initialization.
 ```javascript
-<script type="text/javascript">
 $(function () {
 	var s = new cssSlideJS($("#mySlideshow"), 2000);
 	setTimeout(function () {s.next();}, 1);
 });
-</script>
 ```
 
 
 ## Credits
 
-cssSlideJS by Saverio Caminiti released under [CC-by](http://creativecommons.org/licenses/by/4.0/)
+cssSlideJS by Saverio Caminiti.
 
 Examples use images by [Teekatas Suwannakrua](http://raindropmemory.deviantart.com/)
