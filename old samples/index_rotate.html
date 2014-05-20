@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>cssSlideJS Example</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="cssSlideJS.css" />
+	<script src="cssSlideJS.js"></script>
+
+<style type="text/css">
+/*
+		-webkit-
+		-moz-
+		-o-
+		-ms-
+*/
+/* specific slideshow classes for .fade */
+.rotate {
+	position: relative;
+	overflow: hidden;
+}
+.rotate .slide {
+	position: absolute; top: 0; left: 0;
+	display: none;
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+.rotate .current { display: block; }
+.rotate .prev { display: block;
+		-webkit-transform-origin: 100% 100%;
+		-moz-transform-origin: 100% 100%;
+		-o-transform-origin: 100% 100%;
+		-ms-transform-origin: 100% 100%;
+	transform-origin: 100% 100%;
+		-webkit-transform: rotate( 90deg );
+		-moz-transform: rotate( 90deg );
+		-o-transform: rotate( 90deg );
+		-ms-transform: rotate( 90deg );
+	transform: rotate( 90deg );
+}
+.rotate .next { display: block;
+		-webkit-transform-origin: 0% 100%;
+		-moz-transform-origin: 0 100%;
+		-o-transform-origin: 0 100%;
+		-ms-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+		-webkit-transform: rotate( -90deg );
+		-moz-transform: rotate( -90deg );
+		-o-transform: rotate( -90deg );
+		-ms-transform: rotate( -90deg );
+	transform: rotate( -90deg );
+}
+
+</style>
+</head>
+<body>
+
+<p>This a simple JS script (based on JQuery) that create a slideshow with all elements in a given div.</p>
+<p>The script simply assing the folliwing classes to elements according with a given time interval:</p>
+<ul>
+	<li><tt>slide</tt>: to all elements</li>
+	<li><tt>current</tt>: to the current element</li>
+	<li><tt>prev</tt>: to the previous element (none at the beginning)</li>
+	<li><tt>next</tt>: to the next element</li>
+</ul>
+<p>It is up to you to define positions, property and animations via css. You can create horizontal and vertical slides, 3D flips, fade and/or zoom effects, etc.</p>
+
+<script type="text/javascript">
+$(function () {
+	t = new cssSlideJS($("#test1"), 1000);
+	// t.stop();
+});
+</script>
+
+
+<div id="test1" class="rotate" style="width:256px; height:256px; margin: 50px auto">
+	<img src="1.png"/>
+	<img src="2.png"/>
+	<img src="3.png"/>
+	<img src="4.png"/>
+	<img src="5.png"/>
+</div>
+
+</body>
+</html>
