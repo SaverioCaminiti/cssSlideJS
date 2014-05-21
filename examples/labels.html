@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Saverio Caminiti">
+	<title>cssSlideJS Example</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../cssSlideJS.js"></script>
+	<style>
+		body {
+			font: 12pt Verdana, Geneva, sans-serif;
+			padding: 20pt;
+		}
+		.credits {
+			font-size: 75%;
+			text-align: right;
+			border-top: 1px solid #ddd;
+		}
+
+		#mySlideshow { /* position and size this slideshow div */
+			width: 256px; height: 256px;
+			margin: 20pt auto; 
+			box-shadow: 0 2px 10px black;
+			border-radius: 20px;
+		}
+
+		#mySlideshow .slide {
+			width: 256px;
+			height: 256px;
+		}
+		#mySlideshow .slide .label {
+			width: 190px;
+			position: absolute;
+			padding: 10px 20px;
+			margin: 0 10px 10px 10px;
+			color: white;
+			font-weight: bold;
+			text-shadow: 0 0 2px black;
+			background-color: rgba(0, 0, 0, .5);
+			border: 3px solid rgba(255, 255, 255, .85);
+			border-radius: 15px;
+			box-shadow: 0 0 10px black;
+		}
+
+		/* classes for all .hScrollR2L */
+		.hScrollR2L {
+			display: block;
+			overflow: hidden;
+			position: relative;
+		}
+		.hScrollR2L .slide {
+			display: none;
+			position: absolute;
+				-webkit-transition: left .3s ease-in-out;
+				-moz-transition: left .3s ease-in-out;
+				-o-transition: left .3s ease-in-out;
+				-ms-transition: left .3s ease-in-out;
+			transition: left .3s ease-in-out;
+		}
+		.hScrollR2L .current { display: block; left: 0; }
+		.hScrollR2L .prev { display: block; left: -100%; }
+		.hScrollR2L .next { display: block; left: 100%; }
+
+
+		.hScrollR2L .slide .label {
+				-webkit-transition: all .7s ease-in-out;
+				-moz-transition: all .7s ease-in-out;
+				-o-transition: all .7s ease-in-out;
+				-ms-transition: all .7s ease-in-out;
+			transition: all .7s ease-in-out;
+			opacity: 0;
+			bottom: -20%;
+		}
+		.hScrollR2L .current .label {
+			opacity: 1;
+			bottom: 0;
+		}
+
+	</style>
+</head>
+<body>
+
+<h1><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> examples/labels</h1>
+<p>Adding animated content to the slideshow elments.</p>
+
+<script type="text/javascript">
+$(function () { // when DOM is ready
+	// init cssSlideJS on #mySlideshow with a 2sec delay
+	new cssSlideJS($("#mySlideshow"), 2000);
+});
+</script>
+
+<div id="mySlideshow" class="hScrollR2L">
+	<div class="slide current">
+		<img src="images/1.png"/>
+		<div class="label">Some text here 1</div>
+	</div>
+	<div class="slide next">
+		<img src="images/2.png"/>
+		<div class="label">Some text here 2</div>
+	</div>
+	<div class="slide">
+		<img src="images/3.png"/>
+		<div class="label">Some text here 3</div>
+	</div>
+	<div class="slide">
+		<img src="images/4.png"/>
+		<div class="label">Some text here 4</div>
+	</div>
+	<div class="slide prev">
+		<img src="images/5.png"/>
+		<div class="label">Some text here 5</div>
+	</div>
+</div>
+
+
+<p class="credits"><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> by Saverio Caminiti</p>
+
+</body>
+</html>
