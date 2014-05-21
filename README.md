@@ -19,7 +19,7 @@ In your html file you must include JQuery and the main cssSlideJS.js file.
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/yourpath/cssSlideJS.js"></script>
 ```
-Then add a div with a list of images and initialize cssSlideJS on this div.
+Then add a div with a list of images and initialize cssSlideJS on this div providing a time interval. Give it a id and/or class of your choice to easy select and style it.
 ```html
 <div id="mySlideshow" class="fade">
 	<img src="images/1.png"/>
@@ -33,7 +33,7 @@ new cssSlideJS($("#mySlideshow"), 2000);
 </script>
 ```
 
-Now it's up to you to define how the `fade` slideshow should look like via CSS. Here is a sample:
+Now it's up to you to define how the slideshow should look like via CSS. Here is a sample:
 ```css
 #mySlideshow { width: 256px; height: 256px; }
 .fade { position: relative; }
@@ -51,10 +51,11 @@ Now it's up to you to define how the `fade` slideshow should look like via CSS. 
 .fade .prev { display: block; }
 .fade .next { display: block; }
 ```
-In this example we position the images and animate the opacity property to create a fade-in/fade-out effect. Check `examples/fade.html` to see the result. Don't forget to check out the other examples: there is a lot of cool things you can do with a few lines of CSS.
+In this example we position the images and animate the opacity property to create a fade-in/fade-out effect. Check `examples/fade.html` to see the result.
+Don't forget to check out the other examples: there is a lot of cool things you can do with a few lines of CSS.
 
 ### Pre-warm
-Based on your CSS animation you may experience some glitch at the beginning of the slideshow (when no element is given a class `.prev`).
+Based on your CSS animation you may experience some glitch at the beginning of the slideshow.
 
 To prevent this you can assign class `slide` to all images, `current` to the first image, `next` to the second one, and `prev` to the last one. Just like this:
 ```html
@@ -73,9 +74,12 @@ var s = new cssSlideJS($("#mySlideshow"), 2000);
 setTimeout(function () {s.next();}, 1);
 ```
 Use the method that better fits your animation.
+See `examples/scroll.html` and `examples/flip3d.html` to see these two tips in use.
+
+
 
 ### Complex content
-cssSlideJS works cycling classes on all elements children of the given elements, so you can use it on a list of div, span, img, etc. or even on all items in list.
+cssSlideJS works cycling classes on all elements children of the given elements, so you can use it on a set of div, span, img, etc. or even on all items in list.
 See `examples/labels.html` and `examples/list.html` for various content examples.
 
 ## Credits

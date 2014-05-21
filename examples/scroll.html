@@ -7,20 +7,11 @@
 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="../cssSlideJS.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<style>
-		body {
-			font: 12pt Verdana, Geneva, sans-serif;
-			padding: 20pt;
-		}
-		.credits {
-			font-size: 75%;
-			text-align: right;
-			border-top: 1px solid #ddd;
-		}
-
 		#mySlideshow1, #mySlideshow2, #mySlideshow3, #mySlideshow4 {
 			width: 256px; height: 256px;
-			margin: 20pt 0 40pt 0;
+			margin: 20pt auto 40pt auto;
 			box-shadow: 0 2px 10px #ccc;
 		}
 
@@ -115,7 +106,7 @@ $(function () { // when DOM is ready
 });
 </script>
 
-<p>Scroll right to left.</p>
+<p>Scroll right to left with easing.</p>
 <div id="mySlideshow1" class="hScrollR2L">
 	<img src="images/1.png"/>
 	<img src="images/2.png"/>
@@ -135,7 +126,7 @@ $(function () { // when DOM is ready
 </div>
 
 
-<p>Scroll top to bottom continuously. This one call the next() method right after the JavaScript initialization so that there is no delay on the first image. Reload the page and compare the bheavoiour of this one and the previous one.</p>
+<p>Scroll top to bottom continuously. This one call the <tt>next()</tt> method right after the JavaScript initialization so that there is no delay on the first image. Reload the page and compare the behaviour of this one and the previous one.</p>
 <div id="mySlideshow3" class="vScrollT2B">
 	<img src="images/1.png"/>
 	<img src="images/2.png"/>

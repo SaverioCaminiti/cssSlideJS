@@ -1,0 +1,18 @@
+html {
+	background-color: #222;
+}
+body {
+	font: 12pt Verdana, Geneva, sans-serif;
+	max-width: 800px;
+	max-width: 600px;	
+	margin: 0 auto;
+	padding: 20px; 
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 20px black;
+}
+.credits {
+	font-size: 75%;
+	text-align: right;
+	border-top: 1px solid #ddd;
+}
