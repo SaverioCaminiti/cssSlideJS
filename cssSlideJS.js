@@ -1,6 +1,17 @@
-cssSlideJS = function ($div, aDelay) {
+/*
+ * cssSlideJS
+ * Author: Saverio Caminiti
+ * Copyright (c) 2014 Saverio Caminiti
+ * MIT Licensed: http://www.opensource.org/licenses/mit-license.php
+ *
+ * Version 1.0
+ * https://github.com/SaverioCaminiti/cssSlideJS
+ */
+
+'use strict';
+
+cssSlideJS = function ($div, delay) {
 	var self = this;
-	var delay = aDelay;
 	var $slides;
 	var currentSlide = 0;
 	var n = 0;
@@ -19,7 +30,7 @@ cssSlideJS = function ($div, aDelay) {
 	}
 
 	function play() {
-		if (timer == null) timer = setInterval(next, delay);
+		if (timer == null) timer = setInterval(showNext, delay);
 	}
 
 	function stop() {
@@ -27,7 +38,8 @@ cssSlideJS = function ($div, aDelay) {
 		timer = null;
 	}
 
-	function next() { // this is a callback, do not use this here, rather use self
+	function showNext() {
+		// this is a callback, do not use this here, rather use self if needed
 		$slides.removeClass("prev");
 		$slides.filter(".current").removeClass("current").addClass("prev");
 
@@ -37,6 +49,11 @@ cssSlideJS = function ($div, aDelay) {
 		$slides.eq((currentSlide+1) % n).addClass("next");
 	}
 
+	function next() { // force next image to be show and reset the timer
+		stop();
+		showNext();
+		start();
+	}
 
 	// public methods
 	this.play = play;

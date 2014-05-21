@@ -3,7 +3,7 @@
 ## A simple JS script to create CSS slideshows.
 
 cssSlideJS relies on JQuery and creates a slideshow with all elements in a given div.
-It simply assings the folliwing classes to those elements according with a given time interval:
+It simply assigns the following classes to those elements according with a given time interval:
 
 * `.slide`: to all elements;
 * `.current`: to the current element;
@@ -29,9 +29,7 @@ Then add a div with a list of images and initialize cssSlideJS on this div.
 </div>
 
 <script type="text/javascript">
-$(function () {
-	new cssSlideJS($("#mySlideshow"), 2000);
-});
+new cssSlideJS($("#mySlideshow"), 2000);
 </script>
 ```
 
@@ -53,13 +51,12 @@ Now it's up to you to define how the `fade` slideshow should look like via CSS. 
 .fade .prev { display: block; }
 .fade .next { display: block; }
 ```
-In this example we position the images and animate the opacity property to create a fade-in/fade-out effect. Check `example/fade.html` to see the result.
-
-Don't forget to check out the other examples.
+In this example we position the images and animate the opacity property to create a fade-in/fade-out effect. Check `examples/fade.html` to see the result. Don't forget to check out the other examples: there is a lot of cool things you can do with a few lines of CSS.
 
 ### Pre-warm
-Based on your CSS animation you may experience some glitch at the beginnig of the slideshow (when no element is given a class `.prev`).
-To prevent this either assing classes to your images tag in the html code, like this:
+Based on your CSS animation you may experience some glitch at the beginning of the slideshow (when no element is given a class `.prev`).
+
+To prevent this you can assign classes to your images tag in the html code, like this:
 ```html
 <div id="mySlideshow" class="fade">
 	<img src="images/1.png" class="current"/>
@@ -68,17 +65,17 @@ To prevent this either assing classes to your images tag in the html code, like 
 	<img src="images/4.png" class="prev"/>
 </div>
 ```
-or force an first image swap right after the JavaScript initialization.
-```javascript
-$(function () {
-	var s = new cssSlideJS($("#mySlideshow"), 2000);
-	setTimeout(function () {s.next();}, 1);
-});
-```
+`current` to the first image, `next` to the second one, and `prev` to the last one.
 
+Alternatively you can force a first image swap right after the JavaScript initialization.
+```javascript
+var s = new cssSlideJS($("#mySlideshow"), 2000);
+setTimeout(function () {s.next();}, 1);
+```
+Use the method that better fits your animation.
 
 ## Credits
 
-cssSlideJS by Saverio Caminiti.
+cssSlideJS by Saverio Caminiti released under MIT license.
 
 Examples use images by [Teekatas Suwannakrua](http://raindropmemory.deviantart.com/)
