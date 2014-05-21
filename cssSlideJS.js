@@ -10,8 +10,7 @@
 
 'use strict';
 
-cssSlideJS = function ($div, delay) {
-	var self = this;
+var cssSlideJS = function ($div, delay) {
 	var $slides;
 	var currentSlide = 0;
 	var n = 0;
@@ -39,7 +38,6 @@ cssSlideJS = function ($div, delay) {
 	}
 
 	function showNext() {
-		// this is a callback, do not use this here, rather use self if needed
 		$slides.removeClass("prev");
 		$slides.filter(".current").removeClass("current").addClass("prev");
 
@@ -52,7 +50,7 @@ cssSlideJS = function ($div, delay) {
 	function next() { // force next image to be show and reset the timer
 		stop();
 		showNext();
-		start();
+		play();
 	}
 
 	// public methods

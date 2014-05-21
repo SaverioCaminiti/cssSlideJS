@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Saverio Caminiti">
+	<title>cssSlideJS Example</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../cssSlideJS.js"></script>
+	<style>
+		body {
+			font: 12pt Verdana, Geneva, sans-serif;
+			padding: 20pt;
+		}
+		.credits {
+			font-size: 75%;
+			text-align: right;
+			border-top: 1px solid #ddd;
+		}
+
+		#mySlideshow { /* position and size this slideshow div */
+			width: 512px; height: 256px;
+			margin: 20pt auto; 
+		}
+
+		/* classes for all .carousel slideshows */
+		.carousel { overflow: hidden; position: relative; }
+		.carousel .slide { bottom: 30%; left:50%; height: 0%; position: absolute; z-index: 1;
+				-webkit-transition: all 1s ease-in-out;
+				-moz-transition: all 1s ease-in-out;
+				-o-transition: all 1s ease-in-out;
+				-ms-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+		}
+		.carousel .current { height: 100%; left: 25%; bottom: 0; z-index: 3; }
+		.carousel .prev { height: 50%; left: 0; bottom: 15%; z-index: 2; }
+		.carousel .next { height: 50%; left: 75%; bottom: 15%; z-index: 2; }
+	</style>
+</head>
+<body>
+
+<h1><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> examples/carousel</h1>
+<p>A carousel with many images but only 3 visible at a time.</p>
+
+<script type="text/javascript">
+$(function () { // when DOM is ready
+	// init cssSlideJS on #mySlideshow with a 2sec delay
+	new cssSlideJS($("#mySlideshow"), 2000);
+});
+</script>
+
+<div id="mySlideshow" class="carousel">
+	<img src="images/1.png" class="slide current"/>
+	<img src="images/2.png" class="slide next"/>
+	<img src="images/3.png" class="slide"/>
+	<img src="images/4.png" class="slide"/>
+	<img src="images/5.png" class="slide prev"/>
+</div>
+
+
+<p class="credits"><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> by Saverio Caminiti</p>
+
+</body>
+</html>

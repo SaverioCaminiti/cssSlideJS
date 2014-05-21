@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Saverio Caminiti">
+	<title>cssSlideJS Example</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../cssSlideJS.js"></script>
+	<style>
+		body {
+			font: 12pt Verdana, Geneva, sans-serif;
+			padding: 20pt;
+		}
+		.credits {
+			font-size: 75%;
+			text-align: right;
+			border-top: 1px solid #ddd;
+		}
+
+		#mySlideshow { /* position and size this slideshow div */
+			width: 256px; height: 256px;
+			margin: 20pt auto; 
+		}
+
+		/* classes for all .fade slideshows */
+		.fade { position: relative; }
+		.fade .slide {
+			position: absolute; top: 0; left: 0;
+			display: none;
+			opacity: 0;
+				-webkit-transition: opacity .3s ease-in-out;
+				-moz-transition: opacity .3s ease-in-out;
+				-o-transition: opacity .3s ease-in-out;
+				-ms-transition: opacity .3s ease-in-out;
+			transition: opacity .3s ease-in-out;
+		}
+		.fade .current { display: block; opacity: 1; }
+		.fade .prev { display: block; }
+		.fade .next { display: block; }
+	</style>
+</head>
+<body>
+
+<h1><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> examples/fade</h1>
+<p>A simple fade-in/fade-out slideshow.</p>
+
+<script type="text/javascript">
+$(function () { // when DOM is ready
+	// init cssSlideJS on #mySlideshow with a 2sec delay
+	new cssSlideJS($("#mySlideshow"), 2000);
+});
+</script>
+
+<div id="mySlideshow" class="fade">
+	<img src="images/1.png"/>
+	<img src="images/2.png"/>
+	<img src="images/3.png"/>
+	<img src="images/4.png"/>
+	<img src="images/5.png"/>
+</div>
+
+<p class="credits"><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> by Saverio Caminiti</p>
+
+</body>
+</html>

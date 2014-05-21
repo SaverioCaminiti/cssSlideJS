@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Saverio Caminiti">
+	<title>cssSlideJS Example</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../cssSlideJS.js"></script>
+	<style>
+		body {
+			font: 12pt Verdana, Geneva, sans-serif;
+			padding: 20pt;
+		}
+		.credits {
+			font-size: 75%;
+			text-align: right;
+			border-top: 1px solid #ddd;
+		}
+
+		li {
+			padding: 3pt;
+			border-radius: 6pt;			
+		}
+		/* classes for all .list slideshows */
+		.list .slide {
+				-webkit-transition: all .7s ease-in-out;
+				-moz-transition: all .7s ease-in-out;
+				-o-transition: all .7s ease-in-out;
+				-ms-transition: all .7s ease-in-out;
+			transition: all .7s ease-in-out;
+		}
+		.list .current {
+			background-color: #fb4;
+			padding: 6pt 3pt;
+		}
+	</style>
+</head>
+<body>
+
+<h1><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> examples/list</h1>
+<p>How to use cssSlideJS to create effects on list elements.</p>
+
+<script type="text/javascript">
+$(function () { // when DOM is ready
+	// init cssSlideJS on #mySlideshow with a 2sec delay
+	new cssSlideJS($("#mySlideshow"), 3000);
+});
+</script>
+
+<ul id="mySlideshow" class="list">
+	<li>Orange</li>
+	<li>Banana</li>
+	<li>Pear</li>
+	<li>Strawberry</li>
+	<li>Lime</li>
+</ul>
+
+<p class="credits"><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> by Saverio Caminiti</p>
+
+</body>
+</html>

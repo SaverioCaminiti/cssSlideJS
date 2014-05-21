@@ -56,16 +56,16 @@ In this example we position the images and animate the opacity property to creat
 ### Pre-warm
 Based on your CSS animation you may experience some glitch at the beginning of the slideshow (when no element is given a class `.prev`).
 
-To prevent this you can assign classes to your images tag in the html code, like this:
+To prevent this you can assign class `slide` to all images, `current` to the first image, `next` to the second one, and `prev` to the last one. Just like this:
 ```html
 <div id="mySlideshow" class="fade">
-	<img src="images/1.png" class="current"/>
-	<img src="images/2.png" class="next"/>
-	<img src="images/3.png"/>
-	<img src="images/4.png" class="prev"/>
+	<img src="images/1.png" class="slide current"/>
+	<img src="images/2.png" class="slide next"/>
+	<img src="images/3.png" class="slide"/>
+	<img src="images/4.png" class="slide"/>
+	<img src="images/5.png" class="slide prev"/>
 </div>
 ```
-`current` to the first image, `next` to the second one, and `prev` to the last one.
 
 Alternatively you can force a first image swap right after the JavaScript initialization.
 ```javascript
@@ -73,6 +73,10 @@ var s = new cssSlideJS($("#mySlideshow"), 2000);
 setTimeout(function () {s.next();}, 1);
 ```
 Use the method that better fits your animation.
+
+### Complex content
+cssSlideJS works cycling classes on all elements children of the given elements, so you can use it on a list of div, span, img, etc. or even on all items in list.
+See `examples/labels.html` and `examples/list.html` for various content examples.
 
 ## Credits
 

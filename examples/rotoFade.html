@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Saverio Caminiti">
+	<title>cssSlideJS Example</title>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="../cssSlideJS.js"></script>
+	<style>
+		body {
+			font: 12pt Verdana, Geneva, sans-serif;
+			padding: 20pt;
+		}
+		.credits {
+			font-size: 75%;
+			text-align: right;
+			border-top: 1px solid #ddd;
+		}
+
+		#mySlideshow { /* position and size this slideshow div */
+			width: 256px; height: 256px;
+			margin: 20pt auto; 
+		}
+
+		/* classes for all .rotoFade slideshows */
+		.rotoFade {
+			position: relative;
+		}
+		.rotoFade .slide {
+			position: absolute; top: 0; left: 0;
+			opacity: 0;
+				-webkit-transition: all 1s ease-in-out;
+				-moz-transition: all 1s ease-in-out;
+				-o-transition: all 1s ease-in-out;
+				-ms-transition: all 1s ease-in-out;
+			transition: all 1s ease-in-out;
+		}
+		.rotoFade .current { display: block; opacity: 1;}
+		.rotoFade .prev { display: block; opacity: 0;
+				-webkit-transform-origin: 0 100%;
+				-moz-transform-origin: 0 100%;
+				-o-transform-origin: 0 100%;
+				-ms-transform-origin: 0 100%;
+			transform-origin: 0 100%;
+				-webkit-transform: rotate( 45deg );
+				-moz-transform: rotate( 45deg );
+				-o-transform: rotate( 45deg );
+				-ms-transform: rotate( 45deg );
+			transform: rotate( 45deg );
+		}
+		.rotoFade .next { display: block; opacity: 0;
+				-webkit-transform-origin: 100% 100%;
+				-moz-transform-origin: 100% 100%;
+				-o-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+			transform-origin: 100% 100%;
+				-webkit-transform: rotate( -45deg );
+				-moz-transform: rotate( -45deg );
+				-o-transform: rotate( -45deg );
+				-ms-transform: rotate( -45deg );
+			transform: rotate( -45deg );
+		}
+	</style>
+</head>
+<body>
+
+<h1><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> examples/rotoFade</h1>
+<p>A simple rotoFade-in/rotoFade-out slideshow.</p>
+
+<script type="text/javascript">
+$(function () { // when DOM is ready
+	// init cssSlideJS on #mySlideshow with a 2sec delay
+	var s = new cssSlideJS($("#mySlideshow"), 2000);
+	setTimeout(function () {s.next();}, 1); // start movement suddenly, don't wait first delay
+});
+</script>
+
+<div id="mySlideshow" class="rotoFade">
+	<img src="images/1.png" class="slide current"/>
+	<img src="images/2.png" class="slide next"/>
+	<img src="images/3.png" class="slide"/>
+	<img src="images/4.png" class="slide"/>
+	<img src="images/5.png" class="slide prev"/>
+</div>
+
+<p class="credits"><a href="https://github.com/SaverioCaminiti/cssSlideJS">cssSlideJS</a> by Saverio Caminiti</p>
+
+</body>
+</html>
